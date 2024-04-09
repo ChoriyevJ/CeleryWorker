@@ -1,5 +1,7 @@
+
 from .base import *  # noqa
 from .base import env
+from celery.schedules import crontab
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -34,7 +36,6 @@ EMAIL_PORT = 1025
 # ------------------------------------------------------------------------------
 # http://whitenoise.evans.io/en/latest/django.html#using-whitenoise-in-development
 INSTALLED_APPS = ["whitenoise.runserver_nostatic"] + INSTALLED_APPS  # noqa: F405
-
 
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
@@ -73,3 +74,5 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",  # noqa
     }
 }
+
+
